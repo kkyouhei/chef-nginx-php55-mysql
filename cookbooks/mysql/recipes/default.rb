@@ -10,4 +10,8 @@
     package pkg do
         action :install
     end
+
+    service "mysqld" do
+        action [:start, :enable]
+    end
 end
