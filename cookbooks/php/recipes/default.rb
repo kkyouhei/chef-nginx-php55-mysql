@@ -16,3 +16,7 @@
         action :upgrade
     end
 end
+
+service "php-fpm" do
+    action [:start, :enable]
+end
