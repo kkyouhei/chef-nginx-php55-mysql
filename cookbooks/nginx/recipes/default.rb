@@ -10,6 +10,14 @@ package "nginx" do
     action :install
 end
 
+template "/etc/nginx/conf.d/default.conf" do
+    source "default.conf.erb"
+    owner "root"
+    group "root"
+    mode 0644
+    action :create
+end
+
 service "nginx" do
-    action [:enable, :start]
+    action [:enable, :restart]
 end
