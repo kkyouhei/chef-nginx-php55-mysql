@@ -22,3 +22,11 @@ end
         action :install
     end
 end
+
+template "/home/vagrant/.vimrc" do
+    source ".vimrc"
+    owner "vagrant"
+    group "vagrant"
+    mode 0644
+    action :create
+end
