@@ -16,3 +16,9 @@ package node['remi']['file_name'] do
     provider Chef::Provider::Package::Rpm
     source "/tmp/#{node['remi']['file_name']}"
 end
+
+%w{vim}.each do |pkg|
+    package pkg do
+        action :install
+    end
+end
